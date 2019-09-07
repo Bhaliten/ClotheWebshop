@@ -10,8 +10,8 @@ class Products extends Connection
 		parent::getConnection();
 	}
 
-	function getAllMen(){
-		$res=$this->conn->prepare("select * from products where sex like 'men'");
+	function stock($sql){
+		$res=$this->conn->prepare($sql);
 		$res->execute();
 		$array=array();
 
@@ -21,14 +21,19 @@ class Products extends Connection
 		return $array;
 	}
 
+	function getAllMen(){
+		return $this->stock("select * from products where sex like 'men'");
+	}
 	function getAllWomen(){
-		$res=$this->conn->prepare("select * from products where sex like 'women'");
-		$res->execute();
-		$array=array();
-
-			while ($row=$res->fetch()) 
-				array_push($array, $row);
-			
-		return $array;
+		return $this->stock("select * from products where sex like 'women'");
+	}
+	function getAllKind(){
+		return $this->stock("select distinct kind from products inner join collection on products.kind_id=collection.id");
+	}
+	function getMinPrice(){
+		return $this->stock("select min(price) as min from products");
+	}
+	function getManPrice(){
+		return $this->stock("select max(price) as max from products");
 	}
 } ?>

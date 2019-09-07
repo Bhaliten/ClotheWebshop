@@ -1,11 +1,13 @@
-<div class="container-fluid">
-	<div class="row">
+<?php 
+	require 'class/Connection.php';
+	require 'class/Search.php';
 
-		<?php 
+	$search=new Search($_POST["kind"],$_POST["min"],$_POST["max"]);
 
-			 foreach ($info as $v) {
+			 foreach ($search->getProducts() as $v) {
 		 ?>
-		<div class="col-sm-12 col-md-4 col-lg-3 col-xl-2">
+
+		<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
 			<table>
 				<tr>
 					<td>
@@ -21,11 +23,9 @@
 				</tr>
 				<tr>
 					<td>
-						<button class="button">Kosárba tesz</button>
+						<button value="<?php echo $v["id"] ?>" class="btn button">Kosárba tesz</button>
 					</td>
 				</tr>
 			</table>
 		</div>
 	<?php } ?>
-	</div>
-</div>

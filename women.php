@@ -10,14 +10,6 @@
 
   $info=$prod->getAllWomen();
 
-  ?>
-
-
-<?php 
-	require 'list.html';
- ?>
-
-
-<?php 
-  require 'footer.html';
+	require 'list.php';
+  	require 'footer.html';
  ?> 

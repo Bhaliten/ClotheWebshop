@@ -1,8 +1,6 @@
 <?php 
   require 'header.html';
- ?>
- 
-<?php 
+
 
   require 'class/Connection.php';
   require 'class/Products.php';
@@ -11,14 +9,6 @@
 
   $info=$prod->getAllMen();
 
- 
-
-?>
-
-<?php 
-	require 'list.html';
- ?>
-
-<?php 
-  require 'footer.html';
+	require 'list.php';
+  	require 'footer.html';
  ?> 
