@@ -33,7 +33,7 @@ class Products extends Connection
 	function getMinPrice(){
 		return $this->stock("select min(price) as min from products");
 	}
-	function getManPrice(){
+	function getMaxPrice(){
 		return $this->stock("select max(price) as max from products");
 	}
 } ?>

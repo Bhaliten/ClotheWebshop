@@ -1,7 +1,7 @@
 $(function(){
 
 
-	var b=$("button");
+	var b=$(".button");
 
 //Ez minden gombra igaz
 	b.on("click",function(){

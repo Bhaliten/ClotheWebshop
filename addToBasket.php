@@ -1,10 +1,10 @@
 <?php 
 session_start();
 
-	if (!isset($_SESSION["kosar"])) 
-		$_SESSION["kosar"]=array();
+	if (!isset($_SESSION["basket"])) 
+		$_SESSION["basket"]=array();
 	
 
-	array_push($_SESSION["kosar"], $_POST["id"]);
+	array_push($_SESSION["basket"], $_POST["id"]);
 
  ?>

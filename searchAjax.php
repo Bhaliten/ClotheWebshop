@@ -2,7 +2,7 @@
 	require 'class/Connection.php';
 	require 'class/Search.php';
 
-	$search=new Search($_POST["kind"],$_POST["min"],$_POST["max"]);
+	$search=new Search($_POST["kind"],$_POST["min"],$_POST["max"],$_POST["sex"]);
 
 			 foreach ($search->getProducts() as $v) {
 		 ?>

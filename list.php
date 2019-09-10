@@ -5,7 +5,7 @@
 			<br>
 			<h3>Ár</h3>
 			<input class="col-lg-3 col-sm-5 btn" type="number" id="min" value="<?php echo $prod->getMinPrice()[0][0] ?>"> <b>-</b>
-			<input class="col-lg-3 col-sm-5 btn" type="number" id="max" value="<?php echo $prod->getManPrice()[0][0] ?>">
+			<input class="col-lg-3 col-sm-5 btn" type="number" id="max" value="<?php echo $prod->getMaxPrice()[0][0] ?>">
 
 			<select id="kind" class="btn col-lg-3 col-sm-10">
 				<option>Mind</option>
@@ -21,7 +21,7 @@
 			<br><br>
 		</div>
 
-		<div id="result" class="row"></div>
+		<div id="result" class="row">
 	
 		<?php 
 
@@ -51,6 +51,6 @@
 		</div>
 	<?php } ?>
 
-
+	</div>
 	</div>
 </div>
