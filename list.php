@@ -44,7 +44,7 @@
 				</tr>
 				<tr>
 					<td>
-						<button value="<?php echo $v["id"] ?>" class="btn button">Kosárba tesz</button>
+						<button value="<?php echo $v["id"] ?>" class="btn btn-success button">Kosárba tesz</button>
 					</td>
 				</tr>
 			</table>
