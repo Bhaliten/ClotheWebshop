@@ -10,8 +10,8 @@ class Admin extends Connection
 		parent::getConnection();
 	}
 
-	function upload(){
-		$res=$this->conn->prepare("INSERT into products(price,name,kind_id,img,sex) values (?,?,(select id from collection where name like ?),?,?)");
+	function upload($price,$name,$kind,$img,$sex){
+		$res=$this->conn->prepare("INSERT into products(price,name,kind_id,img,sex) values (?,?,(select id from collection where kind like ?),?,?)");
 		$res->bindparam(1,$price);
 		$res->bindparam(2,$name);
 		$res->bindparam(3,$kind);
@@ -26,7 +26,8 @@ class Admin extends Connection
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 
 	$problems=array();
-	$uploadOk = 1;
+	
+
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -34,13 +35,13 @@ if(isset($_POST["submit"])) {
     if($check !== false) {
     } else {
         array_push($problems, "Csak képet lehet feltölteni!");
-        $uploadOk = 0;
+        
     }
 }
 // Check if file already exists
 if (file_exists($target_file)) {
     array_push($problems, "Ez a kép már fel van töltve!");
-    $uploadOk = 0;
+    
 }
 
 // Allow certain file formats
@@ -50,11 +51,11 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
    array_push($problems, "Csak jpg, png, jpeg, gif formátum támogatott!");
-    $uploadOk = 0;
+    
 }
 
 // if everything is ok, try to upload file
-	if($uploadOk==1){
+	if(count($problems)==0){
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
        return 0;
    		}

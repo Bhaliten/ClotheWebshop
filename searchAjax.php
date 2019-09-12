@@ -23,9 +23,13 @@
 				</tr>
 				<tr>
 					<td>
-						<button value="<?php echo $v["id"] ?>" class="btn button">Kosárba tesz</button>
+						<button value="<?php echo $v["id"] ?>" class="btn btn-success button">Kosárba tesz</button>
 					</td>
 				</tr>
 			</table>
 		</div>
-	<?php } ?>
+	<?php } 
+
+	//ha mégegyszer behúzom a footert, akkor nem működik a szűkítés, de ha nem, akkor meg keresés után nem működik
+
+	?>
