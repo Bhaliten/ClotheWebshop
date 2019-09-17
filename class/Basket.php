@@ -6,7 +6,7 @@ class Basket extends Connection
 	
 	function __construct()
 	{
-		parent::__construct("root","","localhost","clothe");
+		parent::__construct();
 		parent::getConnection();
 	}
 

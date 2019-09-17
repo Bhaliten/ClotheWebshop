@@ -6,7 +6,7 @@ class Products extends Connection
 	
 	function __construct()
 	{
-		parent::__construct("root","","localhost","clothe");
+		parent::__construct();
 		parent::getConnection();
 	}
 
@@ -22,18 +22,18 @@ class Products extends Connection
 	}
 
 	function getAllMen(){
-		return $this->stock("select * from products where sex like 'men'");
+		return $this->stock("SELECT * from products where sex like 'men'");
 	}
 	function getAllWomen(){
-		return $this->stock("select * from products where sex like 'women'");
+		return $this->stock("SELECT * from products where sex like 'women'");
 	}
 	function getAllKind(){
-		return $this->stock("select distinct kind from products inner join collection on products.kind_id=collection.id");
+		return $this->stock("SELECT distinct kind from products inner join collection on products.kind_id=collection.id");
 	}
 	function getMinPrice(){
-		return $this->stock("select min(price) as min from products");
+		return $this->stock("SELECT min(price) as min from products");
 	}
 	function getMaxPrice(){
-		return $this->stock("select max(price) as max from products");
+		return $this->stock("SELECT max(price) as max from products");
 	}
 } ?>

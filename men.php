@@ -1,15 +1,14 @@
 <?php 
 
 	$sex="men";
-  require 'header.html';
+  require 'header.php';
 
 
-  require 'class/Connection.php';
   require 'class/Products.php';
 
 
   	?>
-	<h2 id="sex">Men</h2>
+	<h2 id="sex" class="text-center">Men</h2>
 	<?php 
 
   $prod=new Products();
@@ -20,5 +19,5 @@
 
 
 	require 'list.php';
-  	require 'footer.html';
+  	require 'footer.php';
  ?> 

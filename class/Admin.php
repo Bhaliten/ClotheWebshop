@@ -6,8 +6,20 @@ class Admin extends Connection
 	
 	function __construct()
 	{
-		parent::__construct("root","","localhost","clothe");
+		parent::__construct();
 		parent::getConnection();
+	}
+
+	function isAdmin($email){
+		$res=$this->conn->prepare("SELECT isAdmin from customers where email like ? and isAdmin like '1'");
+		$res->bindparam(1,$email);
+		$res->execute();
+
+		while ($row=$res->fetch()) 
+			return true;
+
+			return false;
+		
 	}
 
 	function upload($price,$name,$kind,$img,$sex){

@@ -7,17 +7,26 @@
 			<input class="col-lg-3 col-sm-5 btn" type="number" id="min" value="<?php echo $prod->getMinPrice()[0][0] ?>"> <b>-</b>
 			<input class="col-lg-3 col-sm-5 btn" type="number" id="max" value="<?php echo $prod->getMaxPrice()[0][0] ?>">
 
+
+
 			<select id="kind" class="btn col-lg-3 col-sm-10">
 				<option>Mind</option>
+
 				<?php
 					foreach($prod->getAllKind() as $v){
 					?>
 
 						<option><?php echo $v["kind"] ; ?></option>
-						<?php
+		
+				<?php
 					}
 				 ?>
+
 			</select>
+
+
+
+
 			<br><br>
 		</div>
 

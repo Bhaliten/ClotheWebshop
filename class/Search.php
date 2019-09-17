@@ -10,7 +10,7 @@ class Search extends Connection
 
 	function __construct($kind,$min,$max,$sex)
 	{
-		parent::__construct("root","","localhost","clothe");
+		parent::__construct();
 		parent::getConnection();
 		if($kind=="Mind")
 			$kind="%%";

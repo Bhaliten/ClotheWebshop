@@ -9,12 +9,12 @@ class Connection
 	protected $dbname;
 	protected $conn;
 
-	function __construct($user,$pwd,$host,$dbname)
+	function __construct()
 	{
-		$this->user=$user;
-		$this->pwd=$pwd;
-		$this->host=$host;
-		$this->dbname=$dbname;
+		$this->user="root";//Clothe
+		$this->pwd="";//asdasd
+		$this->host="localhost";//127.0.0.1
+		$this->dbname="clothe";
 	}
 
 	function getConnection(){

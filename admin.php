@@ -1,12 +1,21 @@
 <?php 
-	require 'header.html';
-	require 'class/Connection.php';
+	
+
+	if(isset($_SESSION["email"])){
+		header("location: index.php");
+	}
+
+	require 'header.php';
+	
 	require 'class/Products.php';
-	require 'class/Admin.php';
+	
 
 	$prod=new Products();
 	$admin=new Admin();
 
+	if(!$admin->isAdmin($_SESSION["email"])){
+		header("location: index.php");
+	}
 
 	if (isset($_POST["upload"])) {
 		$name=trim($_POST["name"]);
@@ -55,5 +64,7 @@
 
 	</div>
 </div>
+
+<?php require 'footer.php'; ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/admin.js"></script>
