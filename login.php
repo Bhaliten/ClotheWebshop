@@ -5,6 +5,8 @@
 		
  		require 'class/Login.php';
 
+ 		$info="";
+
  	if (isset($_POST["log"])) {
  		$email=trim($_POST["email"]);
  		$pwd=trim($_POST["pwd"]);
@@ -15,7 +17,7 @@
  			$_SESSION["email"]=$email;
  			header("location: index.php");
  		}else{
- 			echo "Ilyen email, és jelszó páros nem létezik.";
+ 			$info="Ilyen email, és jelszó páros nem létezik.";
  		}
  	}
 
@@ -30,6 +32,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<form method="post" action="" class="col-sm-12 col-md-10 col-lg-8 col-xl-7">
+			<h3 class="text-danger"><?php echo $info; ?></h3>
 	<h2>Bejelentkezés</h2>
 	
 	<input required="" type="email" name="email" placeholder="E-mail cím, a bejelentkezéshez" minlength="6" maxlength="30" class="form-control">

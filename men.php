@@ -18,6 +18,8 @@
 
 
 
-	require 'list.php';
+  require 'list.php';
+
+  
   	require 'footer.php';
  ?> 

@@ -1,7 +1,12 @@
 <?php 
   session_start();
  require 'class/Connection.php';
-
+ $c=new Connection();
+    try {
+        $c->getConnection();
+    } catch (Exception $e) {
+      echo $e;
+    }
  ?>
 
 <!DOCTYPE html>
@@ -95,7 +100,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="admin.php" class="nav-link text-center">Admin</a>
+        <a href="admin.php" class="nav-link text-center">Feltöltés</a>
       </li>
     </ul>
   </div>

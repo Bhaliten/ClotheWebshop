@@ -1,17 +1,15 @@
 <?php
 
-	 require 'header.php';
-echo "string";
-
+	require 'header.php';
 	require 'class/Registration.php';
-echo "string";
-	$reg=new Registration();
 
-echo "string";
+	$reg=new Registration();
+	$info="";
+
 	if(isset($_POST["reg"])){
 		$email=trim($_POST["email"]);
 		if($reg->existsEmail($email)){
-			echo "Létező email!";
+			$info= "Létező email!";
 		}else{
 			$name=trim($_POST["name"]);
 			$mobile=trim($_POST["mobile"]);
@@ -21,7 +19,7 @@ echo "string";
 			
 			$pwd=trim($_POST["pwd"]);
 			$reg->upload($name,$mobile,$city,$street,$number,$email,$pwd);
-			echo "Sikeres";
+			$info= "Sikeres";
 		}
 	}
 
@@ -32,6 +30,7 @@ echo "string";
 <div class="container-fluid">
 	<div class="row">
 		<form method="post" action="" class="col-sm-12 col-md-10 col-lg-8 col-xl-7">
+			<h3 class="text-danger"><?php echo $info; ?></h3>
 	<h2>Regisztráció</h2>
 	<input required="" type="text" name="name" placeholder="Teljes név" minlength="5" maxlength="30" class="form-control">
 	<input required="" type="mobile" name="mobile" placeholder="Telefonszám" minlength="9" maxlength="20" class="form-control">

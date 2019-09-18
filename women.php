@@ -17,5 +17,7 @@
   $info=$prod->getAllWomen();
 
 	require 'list.php';
+
+	
   	require 'footer.php';
  ?> 

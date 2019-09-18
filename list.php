@@ -30,8 +30,9 @@
 			<br><br>
 		</div>
 
-		<div id="result" class="row">
-	
+		<div id="result" class="row"></div>
+		
+		<div class="row">
 		<?php 
 
 			 foreach ($info as $v) {

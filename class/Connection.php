@@ -11,7 +11,7 @@ class Connection
 
 	function __construct()
 	{
-		$this->user="root";//Clothe
+		$this->user="root";//clothe
 		$this->pwd="";//asdasd
 		$this->host="localhost";//127.0.0.1
 		$this->dbname="clothe";

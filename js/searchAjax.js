@@ -6,6 +6,8 @@ $(function(){
 	var sex=$("#sex");
 	var result=$("#result");
 
+
+	
 	
 
 	k.change(function() {

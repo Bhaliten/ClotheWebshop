@@ -12,6 +12,7 @@
 
 	$prod=new Products();
 	$admin=new Admin();
+	$info="";
 
 	if(!$admin->isAdmin($_SESSION["email"])){
 		header("location: index.php");
@@ -26,10 +27,10 @@
 
 		if($admin->checkImg()==0){
 			$admin->upload($price,$name,$kind,basename($_FILES["image"]["name"]),$sex);
-			echo "Sikeresen feltöltve!";
+			$info= "Sikeresen feltöltve!";
 		}else{
 			foreach ($admin->checkImg() as $v) {
-				echo $v."<br>";
+				$info+= $v."<br>";
 			}
 		}
 	}
@@ -42,6 +43,7 @@
 	<div class="row">
 		
 <form method="post" action="" class="col-sm-12 col-md-10 col-lg-8" enctype="multipart/form-data">
+	<h3 class="text-danger"><?php echo $info; ?></h3>
 	<h2>Új termék feltöltés</h2>
 	<input required="" maxlength="20" class="form-control" type="text" id="name" name="name" placeholder="Termék neve (max 20 karakter)">
 	<input required="" maxlength="5" class="form-control" type="number" id="price" name="price" placeholder="Termék ára (max 99999HUF)">

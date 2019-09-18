@@ -7,7 +7,7 @@
 	$basket=new Basket();
 
 	if (isset($_POST["removeAll"])) {
-		session_destroy();
+		$_SESSION["basket"]=array();
 		header("location: basket.php");
 	}
 
@@ -25,7 +25,7 @@
  <head>
  	<link rel="stylesheet" type="text/css" href="css/basket.css">
  </head>
- <?php if (!isset($_SESSION["basket"])) {
+ <?php if (!isset($_SESSION["basket"])||count($_SESSION["basket"])==0) {
 		?>
 		<br>
 		<h2 class="text-center">A kosarad üres!</h2>
