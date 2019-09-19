@@ -16,12 +16,23 @@
 	text-align: center;
 }
 
-footer{
-	height: 40px;
-}
 .container-fluid{
 	padding-bottom: 15px;
 }
 body{
 	min-height: 100vh;
+
+}
+.navbar{
+	
+	 width: 100%;
+}
+#footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
 }

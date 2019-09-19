@@ -18,7 +18,19 @@
 			array_push($_SESSION["sizes"], $_POST["$v"]);
 		}
 
-		header("location: order.php");
+		require 'class/SetOrder.php';
+
+		$so=new SetOrder();
+
+		try {
+			$so->uploadOrder($_SESSION["email"]);
+			$so->uploadItems($_SESSION["basket"],$_SESSION["sizes"]);
+		} catch (Exception $e) {
+			echo $e;
+		}
+
+		$_SESSION["basket"]=array();
+		header("location:feedback.php");
 	}
 
  ?>
@@ -36,12 +48,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<form method="post" action="" class="col-12">
-<table class="border-dark text-center table">
+<table class="border-light text-center table">
 	<tr>
-		<td><h4>Termék</h4></td>
-		<td><h4>Termék neve</h4></td>
-		<td><h4>Ár</h4></td>
-		<td><h4>Méret</h4></td>
+		<td colspan="2"><h4>Termék</h4></td>
+	
 		
 	</tr>
 	<?php 
@@ -56,36 +66,41 @@
 			<img class="img" src="img/products/<?php echo $array["img"] ?>">
 		</td>
 		<td class="align-middle">
-			<?php echo mb_strtoupper($array["name"],'utf8'); ?>
-		</td>
-		<td class="text-success align-middle">
-			<?php echo $array["price"]; ?> HUF
-		</td>
-		
-		<td class="align-middle">
-			<select class="form-control" name="<?php echo $v ?>">
-				<option>XS</option>
-				<option>S</option>
-				<option>M</option>
-				<option>L</option>
-				<option>XL</option>
-			</select>
+			<p class="text-success align-middle h4"><?php echo mb_strtoupper($array["name"],'utf8'); ?></p>
+			<p class="align-middle h5"><?php echo $array["price"]; ?> HUF</p>
+			<p>Méret: 
+				<select class="btn" name="<?php echo $v ?>">
+					<option>XS</option>
+					<option>S</option>
+					<option>M</option>
+					<option>L</option>
+					<option>XL</option>
+				</select>
+			</p>
 		</td>
 		
 	</tr>
 	<?php } ?>
 	<tr>
-		<td colspan="6">
-			<h3 class="text-success">Végösszeg: <?php echo $total; ?> HUF</h3>
+		<td colspan="2">
+			<h3 class="text-success">Végösszeg: <br><?php echo $total; ?> HUF</h3>
 		</td>
 	</tr>
 	<tr>
 		<form method="post" action="">
-		<td colspan="2">
+		<td>
 			<input type="submit" name="removeAll" class="btn btn-warning" value="Kosár üritése">
 		</td>
-		<td colspan="4">
-			<input type="submit" name="next" class="btn btn-success" value="Rendelési adatok megadása">
+		<td>
+			<?php
+			 if(!isset($_SESSION["email"])||$_SESSION["email"]==""){
+			?>
+				<p class="text-danger h5">Rendeléshez bejelentkezés szükséges!</p>
+			<?php
+			 }else{
+				?>
+			<input type="submit" name="next" class="btn btn-success" value="Rendelés elküldése">
+		<?php } ?>
 		</td>
 		</form>
 	</tr>

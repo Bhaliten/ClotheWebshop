@@ -31,5 +31,6 @@
 	<?php } 
 
 	//ha mégegyszer behúzom a footert, akkor nem működik a szűkítés, de ha nem, akkor meg keresés után nem működik
+		
+	?>		
 
-	?>

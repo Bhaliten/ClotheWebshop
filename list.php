@@ -4,7 +4,7 @@
 		<div class="details col-12 bg-light">
 			<br>
 			<h3>Ár</h3>
-			<input class="col-lg-3 col-sm-5 btn" type="number" id="min" value="<?php echo $prod->getMinPrice()[0][0] ?>"> <b>-</b>
+			<input class="col-lg-3 col-sm-5 btn" type="number" id="min" value="<?php echo $prod->getMinPrice()[0][0] ?>"> <p class="text-center">-</p>
 			<input class="col-lg-3 col-sm-5 btn" type="number" id="max" value="<?php echo $prod->getMaxPrice()[0][0] ?>">
 
 
@@ -30,15 +30,15 @@
 			<br><br>
 		</div>
 
-		<div id="result" class="row"></div>
 		
-		<div class="row">
+		
+		<div id="result" class="row">
 		<?php 
 
 			 foreach ($info as $v) {
 		 ?>
 
-		<div class="first col-sm-12 col-md-6 col-lg-4 col-xl-3">
+		<div class="first col-xs-12 col-sm-10 col-md-6 col-lg-4 col-xl-3">
 			<table>
 				<tr>
 					<td>
@@ -58,8 +58,11 @@
 					</td>
 				</tr>
 			</table>
+
 		</div>
-	<?php } ?>
+	<?php } 
+
+	?>
 
 	</div>
 	</div>

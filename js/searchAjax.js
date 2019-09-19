@@ -30,7 +30,7 @@ $(function(){
 			data: {kind: k.val(), min: min.val(), max: max.val(), sex: sex.text()},
 		
 		success: function(data) {
-			$(".first").html(null);
+			result.html("");
 			result.html(data);
 		}
 		
