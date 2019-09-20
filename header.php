@@ -14,7 +14,8 @@
 
   <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     <meta charset="utf-8">
 
@@ -29,7 +30,7 @@
   </head>
   <body class="bg-light">
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark text-center h5 w-100">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-center h5 w-100">
 
   <a class="navbar-brand" href="index.php"><img src="img/home.jpg" width="30px"></a>
 
@@ -42,21 +43,21 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="men.php" class="nav-link">Férfi ruhák</a>
+        <a href="men.php" class="nav-link text-success">Férfi ruhák</a>
       </li>
     </ul>
   </div>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="women.php" class="nav-link">Női ruhák</a>
+        <a href="women.php" class="nav-link text-success">Női ruhák</a>
       </li>
     </ul>
   </div>
    <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="basket.php" class="nav-link">Kosár</a>
+        <a href="basket.php" class="nav-link text-success">Kosár</a>
       </li>
     </ul>
   </div>
@@ -66,14 +67,14 @@
    <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="login.php" class="nav-link">Bejelentkezés</a>
+        <a href="login.php" class="nav-link text-success">Bejelentkezés</a>
       </li>
     </ul>
   </div>
    <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="registration.php" class="nav-link">Regisztráció</a>
+        <a href="registration.php" class="nav-link text-success">Regisztráció</a>
       </li>
     </ul>
   </div>
@@ -84,7 +85,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="quit.php" class="nav-link">Kijelentkezés</a>
+        <a href="quit.php" class="nav-link text-success">Kijelentkezés</a>
       </li>
     </ul>
   </div>
@@ -100,7 +101,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a href="admin.php" class="nav-link">Feltöltés</a>
+        <a href="admin.php" class="nav-link text-success">Feltöltés</a>
       </li>
     </ul>
   </div>

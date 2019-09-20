@@ -1,7 +1,7 @@
 <?php
 	require 'header.php'; 
 
-	mail($_SESSION["email"], "Rendelés teszt", "Köszönöm hogy kipróbáltad a weboldalam!","From: info@szasim.nhely.hu");
+	mail($_SESSION["email"], "Rendelés teszt", "Köszönöm hogy kipróbáltad a weboldalam! A rendelést nyilván nem szállítjuk ki. :)","From: info@szasim.nhely.hu");
 ?>
 
 

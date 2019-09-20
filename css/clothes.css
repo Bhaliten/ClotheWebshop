@@ -12,9 +12,7 @@
 	color:green;
 	text-align: center;
 }
-.name{
-	text-align: center;
-}
+
 
 .container-fluid{
 	padding-bottom: 15px;
@@ -24,8 +22,7 @@ body{
 
 }
 .navbar{
-	
-	 width: 100%;
+	width: 100%;
 }
 #footer {
    position: fixed;

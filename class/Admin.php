@@ -45,6 +45,9 @@ $target_file = $target_dir . basename($_FILES["image"]["name"]);
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
+    	if($check[0]==900&&$check[1]==1200){
+    		array_push($problems, "900*1200 méret az elfogadott a képnél!");
+    	}
     } else {
         array_push($problems, "Csak képet lehet feltölteni!");
         

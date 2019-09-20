@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 
-		<div class="details col-12 bg-light">
+		<div class="details col-12">
 			<br>
 			<h3>Ár</h3>
 			<input class="col-lg-3 col-sm-5 btn" type="number" id="min" value="<?php echo $prod->getMinPrice()[0][0] ?>"> <p class="text-center">-</p>
@@ -24,21 +24,18 @@
 
 			</select>
 
-
-
-
 			<br><br>
 		</div>
+	</div>
 
-		
-		
-		<div id="result" class="row">
+
+	<div class="row" id="result">
 		<?php 
 
 			 foreach ($info as $v) {
 		 ?>
 
-		<div class="first col-xs-12 col-sm-10 col-md-6 col-lg-4 col-xl-3">
+		<div class="first col-xs-10 col-sm-10 col-md-6 col-lg-4 col-xl-3">
 			<table>
 				<tr>
 					<td>
@@ -47,9 +44,9 @@
 				</tr>
 				<tr>
 					<td>
-						<h3 class="name"><?php echo mb_strtoupper($v["name"],'UTF-8'); ?></h3>
+						<h4 class="name text-center"><?php echo mb_strtoupper($v["name"],'UTF-8'); ?></h4>
 
-						<h3 class="price"><?php echo $v["price"]; ?> HUF</h3>
+						<h4 class="price"><?php echo $v["price"]; ?> HUF</h4>
 					</td>
 				</tr>
 				<tr>
@@ -58,12 +55,10 @@
 					</td>
 				</tr>
 			</table>
-
+			<br>
 		</div>
 	<?php } 
 
 	?>
-
-	</div>
 	</div>
 </div>
