@@ -9,7 +9,7 @@
   require 'class/Products.php';
 
 	?>
-	<h2 id="sex" class="text-center">Women</h2>
+	<p id="sex" class=" d-none">Women</p>
 	<?php 
 
   $prod=new Products();

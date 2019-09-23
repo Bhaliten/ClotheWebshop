@@ -66,7 +66,7 @@
 			<img class="img" src="img/products/<?php echo $array["img"] ?>">
 		</td>
 		<td class="align-middle">
-			<p class="text-success align-middle h4"><?php echo mb_strtoupper($array["name"],'utf8'); ?></p>
+			<p class="text-success align-middle h5"><?php echo mb_strtoupper($array["name"],'utf8'); ?></p>
 			<p class="align-middle h5"><?php echo $array["price"]; ?> HUF</p>
 			<p>Méret: 
 				<select class="btn" name="<?php echo $v ?>">
@@ -84,6 +84,11 @@
 	<tr>
 		<td colspan="2">
 			<h3 class="text-success">Végösszeg: <br><?php echo $total; ?> HUF</h3>
+			<?php if($total<10000){ ?>
+				<p class="text-warning">+ 1000Ft szállítási díj</p>
+			<?php }else{ ?>
+				<p class="text-warning">Ingyenes szállítás!</p>
+			<?php } ?>
 		</td>
 	</tr>
 	<tr>

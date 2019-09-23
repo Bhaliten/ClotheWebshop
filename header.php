@@ -19,7 +19,8 @@
     
     <meta charset="utf-8">
 
-
+    <link rel="shortcut icon" href="img/favicon.png" />  
+    <link rel="icon"          href="img/favicon.png" />  
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 

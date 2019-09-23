@@ -1,13 +1,4 @@
-.prodimg{
-	width: 100%;
-	padding-top: 10px;
-}
-.button{
-	width: 100%;	
-	height: 40px;
-	
 
-}
 .price{
 	color:green;
 	text-align: center;
@@ -21,9 +12,7 @@ body{
 	min-height: 100vh;
 
 }
-.navbar{
-	width: 100%;
-}
+
 #footer {
    position: fixed;
    left: 0;

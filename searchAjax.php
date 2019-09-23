@@ -7,18 +7,18 @@
 			 foreach ($search->getProducts() as $v) {
 		 ?>
 
-		<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+		<div class="col-xs-10 col-sm-10 col-md-6 col-lg-4 col-xl-3">
 			<table>
 				<tr>
 					<td>
-						<img class="prodimg" src="img/products/<?php echo $v["img"] ?>">
+						<img class="w-100" src="img/products/<?php echo $v["img"] ?>">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<h3 class="name"><?php echo mb_strtoupper($v["name"],'UTF-8'); ?></h3>
+						<h5 class="name text-center"><?php echo mb_strtoupper($v["name"],'UTF-8'); ?></h5>
 
-						<h3 class="price"><?php echo $v["price"]; ?> HUF</h3>
+						<h5 class="price"><?php echo $v["price"]; ?> HUF</h5>
 					</td>
 				</tr>
 				<tr>
@@ -27,6 +27,7 @@
 					</td>
 				</tr>
 			</table>
+			<br>
 		</div>
 	<?php } 
 		

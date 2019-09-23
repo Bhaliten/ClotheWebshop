@@ -1,3 +1,7 @@
+
+//Keresés után a gombok nem reagálnak a kosárba helyezésre, ezért ez a módszer nem működött
+
+/*
 $(function(){
 
 	var k=$("#kind");
@@ -37,3 +41,4 @@ $(function(){
 		});
 	}
 });
+*/

@@ -9,7 +9,7 @@
 	if(isset($_POST["reg"])){
 		$email=trim($_POST["email"]);
 		if($reg->existsEmail($email)){
-			$info= "Létező email!";
+			$info= "Foglalt email!";
 		}else{
 			$name=trim($_POST["name"]);
 			$mobile=trim($_POST["mobile"]);
@@ -19,7 +19,7 @@
 			
 			$pwd=trim($_POST["pwd"]);
 			$reg->upload($name,$mobile,$city,$street,$number,$email,$pwd);
-			$info= "Sikeres";
+			$info= "Sikeres regisztráció!";
 		}
 	}
 

@@ -8,7 +8,7 @@
 
 
   	?>
-	<h2 id="sex" class="text-center">Men</h2>
+	<p id="sex" class="d-none">Men</p>
 	<?php 
 
   $prod=new Products();

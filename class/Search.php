@@ -21,7 +21,7 @@ class Search extends Connection
 	}
 
 	function getProducts(){
-		$res=$this->conn->prepare("select * from products inner join collection on products.kind_id=collection.id where kind like ? and price>=? and price<=? and sex like ?");
+		$res=$this->conn->prepare("select products.id as 'id', name, price, img from products inner join collection on products.kind_id=collection.id where kind like ? and price>=? and price<=? and sex like ?");
 		$res->bindparam(1,$this->kind);
 		$res->bindparam(2,$this->min);
 		$res->bindparam(3,$this->max);

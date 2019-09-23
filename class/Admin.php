@@ -64,7 +64,7 @@ if (file_exists($target_file)) {
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+&& $imageFileType != "gif" && $imageFileType != "webp") {
    array_push($problems, "Csak jpg, png, jpeg, gif formátum támogatott!");
     
 }
