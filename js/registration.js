@@ -1,3 +1,4 @@
+//A többit meg tudtam oldani a html tag-eken belül
 $(function(){
 
 	var reg=$("#reg");

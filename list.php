@@ -51,15 +51,9 @@
 				<input type="submit" name="search" value="Keresés" class="btn btn-success col-sm-12">
 			</form>
 			
-
-
-
-			
-
-			<br><br>
 		</div>
 	</div>
-
+<br><br>
 
 	<div class="row" id="result">
 		<?php 

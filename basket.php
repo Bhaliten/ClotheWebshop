@@ -1,7 +1,6 @@
 <?php 
 
 	require 'header.php';
-	
 	require 'class/Basket.php';
 
 	$basket=new Basket();
@@ -41,8 +40,9 @@
 		?>
 		<br>
 		<h2 class="text-center">A kosarad üres!</h2>
-		<?php	
-		}else{ ?>
+
+			
+		<?php }else{ ?>
 
 <br>
 <div class="container-fluid">
