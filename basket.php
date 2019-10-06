@@ -45,12 +45,14 @@
 		<?php }else{ ?>
 
 <br>
-<div class="container-fluid">
+<div class="container-fluid h-100">
 	<div class="row">
 		<form method="post" action="" class="col-12">
-<table class="border-light text-center table">
+
+
+<table class="border-light text-center w-100">
 	<tr>
-		<td colspan="2"><h4>Termék</h4></td>
+		<td colspan="2"><h4>Termék <hr></h4></td>
 	
 		
 	</tr>
@@ -61,9 +63,14 @@
 		$total+=$array["price"];
 		
 	 ?>
+
 	<tr>
 		<td>
-			<img class="img" src="img/products/<?php echo $array["img"] ?>">
+			<?php if(substr($array["img"], 0,4)=="http"){ ?>
+				<img class="img" src="<?php echo $array["img"] ?>">
+			<?php }else{ ?>
+				<img class="img" src="img/products/<?php echo $array["img"] ?>">
+			<?php } ?>
 		</td>
 		<td class="align-middle">
 			<p class="text-success align-middle h5"><?php echo mb_strtoupper($array["name"],'utf8'); ?></p>
@@ -78,8 +85,9 @@
 				</select>
 			</p>
 		</td>
-		
+			
 	</tr>
+	<tr><td colspan="2"><hr></td></tr>
 	<?php } ?>
 	<tr>
 		<td colspan="2">

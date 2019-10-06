@@ -18,6 +18,19 @@
 		header("location: index.php");
 	}
 
+	if(isset($_POST["csv"])){
+		$ok=$admin->checkCSV();
+		if(empty($ok)){
+			$admin->readCSV(basename($_FILES["file"]["name"]));
+			$info= "Sikeres CSV feltöltés!";
+		}else{
+			foreach ($ok as $v) {
+				$info.= $v."<br>";
+			}
+		}
+		
+	}
+
 	if (isset($_POST["upload"])) {
 		$name=trim($_POST["name"]);
 		$price=trim($_POST["price"]);
@@ -39,11 +52,14 @@
  <head>
  	<link rel="stylesheet" type="text/css" href="css/admin.css">
  </head>
+
 <div class="container-fluid">
 	<div class="row">
-		
-<form method="post" action="" class="col-sm-12 col-md-10 col-lg-8" enctype="multipart/form-data">
-	<h3 class="text-danger"><?php echo $info; ?></h3>
+			
+		<h3 class="text-danger col-12 text-center"><?php echo $info; ?></h3>
+
+<form method="post" action="" class="col-sm-12 col-md-5 col-lg-5 border btn-toolbar rounded p-2 m-2" enctype="multipart/form-data">
+	
 	<h2>Új termék feltöltés</h2>
 	<input required="" maxlength="20" class="form-control" type="text" id="name" name="name" placeholder="Termék neve (max 20 karakter)">
 	<input required="" maxlength="5" class="form-control" type="number" id="price" name="price" placeholder="Termék ára (max 99999HUF)">
@@ -63,6 +79,13 @@
 	<input class="form-control btn btn-success" type="submit" id="upload" name="upload" value="Feltöltés" >
 </form>
 
+
+
+<form method="post" action="" class="col-sm-12 col-md-5 col-lg-5 border rounded p-2 m-2" enctype="multipart/form-data">
+	<h2>CSV adatainak feltöltése</h2>
+	<input type="file" name="file" class="form-control btn" required="">
+	<input type="submit" name="csv" class="form-control btn btn-success" value="CSV fájl beolvasása">
+</form>
 
 	</div>
 </div>

@@ -2,7 +2,7 @@
 
   require 'header.php';
  ?>
-				<div class="text-center">
+				<div class="text-center m-1">
 					<br>
 					<h3>Üdv a weboldalamon!</h3>
 				

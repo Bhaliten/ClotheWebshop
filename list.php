@@ -66,7 +66,11 @@
 			<table>
 				<tr>
 					<td>
+						<?php if("http"==substr($v["img"], 0,4)){ ?>
+						<img class="w-100 rounded" src="<?php echo $v["img"] ?>">
+					<?php }else{ ?>
 						<img class="w-100 rounded" src="img/products/<?php echo $v["img"] ?>">
+					<?php } ?>
 					</td>
 				</tr>
 				<tr>
