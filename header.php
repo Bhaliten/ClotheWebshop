@@ -1,6 +1,7 @@
 <?php 
   session_start();
  require 'class/Connection.php';
+ require 'class/Admin.php';
  $c=new Connection();
     try {
         $c->getConnection();
@@ -84,7 +85,7 @@
 
     <?php
    
-    require 'class/Admin.php';
+    
 
       $admin=new Admin();
     if($admin->isAdmin($_SESSION["email"])){

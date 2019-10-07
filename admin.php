@@ -21,8 +21,12 @@
 	if(isset($_POST["csv"])){
 		$ok=$admin->checkCSV();
 		if(empty($ok)){
-			$admin->readCSV(basename($_FILES["file"]["name"]));
-			$info= "Sikeres CSV feltöltés!";
+			$db=$admin->readCSV(basename($_FILES["file"]["name"]));
+			$info.=$db." termék feltöltve.<br>";
+			if($db==0){
+				$info="Sikertelen feltöltés!";
+				unlink("csv/".$_FILES["file"]["name"]);
+			}
 		}else{
 			foreach ($ok as $v) {
 				$info.= $v."<br>";

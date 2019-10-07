@@ -14,6 +14,8 @@ class Admin extends Connection
 
 	function readCSV($csv){
 
+		$prod=0;
+
 	$file=fopen("csv/".$csv, "r");
     $need=array("price_novat", "code","sottocategorie", "picture 1", "categorie");
     feof($file);
@@ -40,7 +42,12 @@ class Admin extends Connection
    
     while (!feof($file)) {
        $splitted=fgetcsv($file);
-
+       /*
+       foreach ($splitted as $v) {
+       	echo $v."<br>";
+       }
+       echo "<br>";
+       */
 //Mivel csak a termékeket tudom használni
        //Az utolsó 2 sor üres
        if(count($splitted)>3)
@@ -58,7 +65,7 @@ class Admin extends Connection
              }
          }
 
-
+         if(count($data)>4){
          //Ha még nincs ilyen kategória, akkor fel kell vinni a táblába
          $cat=$this->isNewCategory($data[2]);
          if($cat==0){
@@ -66,14 +73,24 @@ class Admin extends Connection
          }
          $data[1]=str_replace("_", " ",$data[1]);
          $data[0]=$data[0]*300;
+         /*
+         foreach ($data as $value) {
+         	echo $value."<br>";
+         }
+         echo "<br>";
+         */
+        
+        
      $this->upload($data[0],$data[1],$data[2],$data[3],$data[4]);
+     $prod++;
+ 			}
      
      $data=array();
      }
 
     }
     fclose($file);
-
+    return $prod;
 	}
 
 
@@ -141,6 +158,17 @@ class Admin extends Connection
 
 		$problems=array();
 
+
+
+//Csak CSV-t lehessen feltölteni
+		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+		if($imageFileType != "csv") {
+		   array_push($problems, "Csak csv formátum támogatott!");
+		    
+		}
+
+//Ha már lézetik a fájl akkor nem lehet 
 		if (file_exists($target_file)) {
     		array_push($problems, "Ez a CSV már fel van töltve!");
     	}
