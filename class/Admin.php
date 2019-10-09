@@ -42,16 +42,11 @@ class Admin extends Connection
    
     while (!feof($file)) {
        $splitted=fgetcsv($file);
-       /*
-       foreach ($splitted as $v) {
-       	echo $v."<br>";
-       }
-       echo "<br>";
-       */
-//Mivel csak a termékeket tudom használni
+      
+
        //Az utolsó 2 sor üres
        if(count($splitted)>3)
-        if($splitted[0]!="MODEL"){
+        if($splitted[0]!="MODEL"){//Mivel csak a termékeket tudom használni
  
        	
 
@@ -73,12 +68,6 @@ class Admin extends Connection
          }
          $data[1]=str_replace("_", " ",$data[1]);
          $data[0]=$data[0]*300;
-         /*
-         foreach ($data as $value) {
-         	echo $value."<br>";
-         }
-         echo "<br>";
-         */
         
         
      $this->upload($data[0],$data[1],$data[2],$data[3],$data[4]);
@@ -92,6 +81,9 @@ class Admin extends Connection
     fclose($file);
     return $prod;
 	}
+
+
+	
 
 
 //Ha létezik már a kategória, akkor vissza adja az id-ját, ha nem akkot 0-át
