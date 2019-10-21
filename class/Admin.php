@@ -85,7 +85,6 @@ class Admin extends Connection
 
 	
 
-
 //Ha létezik már a kategória, akkor vissza adja az id-ját, ha nem akkot 0-át
 	function isNewCategory($category){
 		$res=$this->conn->prepare("SELECT id from collection where kind like ?");
