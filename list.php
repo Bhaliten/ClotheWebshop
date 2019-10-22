@@ -63,13 +63,15 @@
 		 ?>
 
 		<div class="col-xs-10 col-sm-10 col-md-6 col-lg-4 col-xl-3">
+			<form method="get" action="termek.php">
 			<table>
 				<tr>
 					<td>
 						<?php if("http"==substr($v["img"], 0,4)){ ?>
-						<img class="w-100 rounded" src="<?php echo $v["img"] ?>">
+						<input type="image" class="w-100 rounded img" src="<?php echo $v["img"] ?>" alt="Submit">
 					<?php }else{ ?>
-						<img class="w-100 rounded" src="img/products/<?php echo $v["img"] ?>">
+						
+						<input type="image" class="w-100 rounded img" src="img/products/<?php echo $v["img"] ?>" alt="Submit">
 					<?php } ?>
 					</td>
 				</tr>
@@ -82,10 +84,12 @@
 				</tr>
 				<tr>
 					<td>
+						<input class="d-none" type="text" name="id" value="<?php echo $v["id"] ?>">
 						<button value="<?php echo $v["id"] ?>" class="btn btn-success w-100 button">Kosárba tesz</button>
 					</td>
 				</tr>
 			</table>
+			</form>
 			<br>
 		</div>
 	<?php } 
