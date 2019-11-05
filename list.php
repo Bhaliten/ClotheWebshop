@@ -63,16 +63,18 @@
 		 ?>
 
 		<div class="col-xs-10 col-sm-10 col-md-6 col-lg-4 col-xl-3">
-			<form method="get" action="termek.php">
+			
 			<table>
 				<tr>
 					<td>
+						<a href="termek.php?id=<?php echo $v["id"] ?>">
 						<?php if("http"==substr($v["img"], 0,4)){ ?>
 						<input type="image" class="w-100 rounded img" src="<?php echo $v["img"] ?>" alt="Submit">
 					<?php }else{ ?>
 						
 						<input type="image" class="w-100 rounded img" src="img/products/<?php echo $v["img"] ?>" alt="Submit">
 					<?php } ?>
+					</a>
 					</td>
 				</tr>
 				<tr>
@@ -89,7 +91,7 @@
 					</td>
 				</tr>
 			</table>
-			</form>
+			
 			<br>
 		</div>
 	<?php } 

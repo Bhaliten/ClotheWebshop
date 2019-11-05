@@ -14,7 +14,7 @@
  		$log=new Login();
 
  		if($log->check($email,$pwd)){
- 			$_SESSION["email"]=$email;
+ 			setcookie("email",$email,time()+600);
  			header("location: index.php");
  		}else{
  			$info="Ilyen email, és jelszó páros nem létezik.";

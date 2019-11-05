@@ -1,5 +1,11 @@
 <?php 
   session_start();
+
+  if(isset($_COOKIE["email"]))
+    $_SESSION["email"]=$_COOKIE["email"];
+
+  
+
  require 'class/Connection.php';
  require 'class/Admin.php';
  $c=new Connection();

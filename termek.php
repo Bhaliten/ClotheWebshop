@@ -17,10 +17,10 @@ $b=new Basket();
 				<tr>
 					<td>
 						<?php if("http"==substr($data["img"], 0,4)){ ?>
-						<img class="w-100 rounded" src="<?php echo $data["img"] ?>">
+						<img class="w-100 rounded col-sm-10 col-md-8 col-lg-5 m-auto" src="<?php echo $data["img"] ?>">
 					<?php }else{ ?>
 						
-						<img class="w-100 rounded img" src="img/products/<?php echo $data["img"] ?>" alt="Submit">
+						<img class="w-100 rounded col-sm-10 col-md-8 col-lg-5 m-auto" src="img/products/<?php echo $data["img"] ?>" alt="Submit">
 					<?php } ?>
 					</td>
 				</tr>
